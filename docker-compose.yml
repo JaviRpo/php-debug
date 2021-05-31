@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  # Our application to debug
+  app:
+    container_name: php-xdebug
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    ports:
+      - '8000:80'
+    volumes:
+        - './index.php:/var/www/html/index.php'
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
