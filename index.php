@@ -1,4 +1,4 @@
 <?php
 $name = $_REQUEST['name'];
-$hello = "Bonjour d" . $name . " !";
+$hello = "Hola " . $name . " !";
 echo $hello;
